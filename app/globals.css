@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.footer li {
+  list-style: none;
+  font-size: small;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: rgb(224, 224, 224);
+}
+
+.footer li:hover {
+  color: rgb(255, 255, 255);
+  text-decoration: underline;
+}
+
+.footer ul {
+  font-size: large;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
