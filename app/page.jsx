@@ -1,7 +1,11 @@
+import Navbar from "./components/homepage/navbar";
+import Topsection from "./components/homepage/topsection";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p>Homepage</p>
+    <main className="flex min flex-col">
+      <Topsection />
+      <Navbar />
     </main>
   );
 }
