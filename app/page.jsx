@@ -8,8 +8,14 @@ import QuestionSection from "./components/homepage/questionSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="">
+      <Topsection />
+      <Navbar />
       <p>Homepage</p>
+      <FacilitySection />
+      <QuestionSection />
+      <ContactSection />
+      <FooterSection />
     </main>
   );
 }
