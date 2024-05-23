@@ -12,6 +12,7 @@ import {
 import { HiAcademicCap } from "react-icons/hi";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -25,7 +26,9 @@ const Navbar = () => {
           </Typography>
         </div>
         <div className=" md:justify-end justify-center  flex w-full px-8 gap-3">
-          <Typography className="py-3">HOME</Typography>
+          <Link href="/">
+            <Typography className="py-3">HOME</Typography>
+          </Link>
           <ProfileMenu />
           <AcademicMenu />
           <Typography className="py-3">CONTACT</Typography>
