@@ -1,40 +1,71 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Menu,
   MenuHandler,
   MenuList,
   MenuItem,
   Button,
-  Card,
   Typography,
 } from "@material-tailwind/react";
-import { HiAcademicCap } from "react-icons/hi";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { CursorArrowRaysIcon } from "@heroicons/react/24/solid";
+import {
+  ChevronDownIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <div className="flex w-full justify-center py-3 px-2">
-      <div className="flex flex-col md:flex-row  max-w-7xl md:justify-between w-full md:items-center">
-        <div className="flex gap-4 w-full ">
-          <img src="/IHRD_Logo.svg" alt="asd" className="w-20" />
-          <Typography variant="h4" color="red">
-            COLLEGE OF APPLIED SCIENCE <br />
-            THAMRASSERY
+    <div className="flex flex-wrap justify-between px-5 py-4 items-center bg-white shadow-md">
+      <div className="flex items-center">
+        <img src="/IHRD_Logo.svg" alt="Logo" className="w-12 md:w-16 lg:w-20" />
+        <Typography
+          variant="h4"
+          color="red"
+          className="ml-2 text-xs sm:text-sm md:text-base lg:text-xl"
+        >
+          COLLEGE OF APPLIED SCIENCE <br />
+          THAMRASSERY
+        </Typography>
+      </div>
+      <div className="md:hidden">
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="focus:outline-none"
+        >
+          {mobileMenuOpen ? (
+            <XMarkIcon className="h-6 w-6" />
+          ) : (
+            <Bars3Icon className="h-6 w-6" />
+          )}
+        </button>
+      </div>
+      <div
+        className={`${
+          mobileMenuOpen ? "flex" : "hidden"
+        } flex-col md:flex md:flex-row items-center md:space-x-4 w-full md:w-auto transition-all duration-300 ease-in-out`}
+      >
+        <Link href="/" className="px-2 py-1">
+          <Typography className="py-1 font-normal text-sm md:text-base">
+            HOME
           </Typography>
-        </div>
-        <div className=" md:justify-end justify-center  flex w-full px-8 gap-3">
-          <Link href="/">
-            <Typography className="py-3 font-normal">HOME</Typography>
-          </Link>
-          <ProfileMenu />
-          <AcademicMenu />
-          <Link href="/#contact">
-            <Typography className="py-3 font-normal">CONTACT</Typography>
-          </Link>
-        </div>
+        </Link>
+        <ProfileMenu />
+        <AcademicMenu />
+        <ActivitiesMenu />
+        <Link href="/#gallery" className="px-2 py-1">
+          <Typography className="py-1 font-normal text-sm md:text-base">
+            GALLERY
+          </Typography>
+        </Link>
+        <Link href="/#contact" className="px-2 py-1">
+          <Typography className="py-1 font-normal text-sm md:text-base">
+            CONTACT
+          </Typography>
+        </Link>
       </div>
     </div>
   );
@@ -43,31 +74,14 @@ const Navbar = () => {
 export default Navbar;
 
 const ProfileMenu = () => {
-  const menuItems = [
-    {
-      title: "About us",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-    {
-      title: "Management",
-      description:
-        "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-    },
-    {
-      title: "Administration",
-      description:
-        "Learn how to use @material-tailwind/react, packed with rich components for React.",
-    },
-  ];
   const [openMenu, setOpenMenu] = React.useState(false);
   return (
-    <div>
+    <div className="py-1">
       <Menu open={openMenu} handler={setOpenMenu} allowHover>
         <MenuHandler>
           <Button
             variant="text"
-            className="flex items-center gap-3 text-base font-normal capitalize tracking-normal"
+            className="flex items-center gap-1 md:gap-3 text-sm md:text-base font-normal capitalize tracking-normal"
           >
             PROFILE{" "}
             <ChevronDownIcon
@@ -78,27 +92,23 @@ const ProfileMenu = () => {
             />
           </Button>
         </MenuHandler>
-        <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
-          <Card
-            color="gray"
-            shadow={false}
-            className="col-span-3 flex h-full w-full items-center justify-center rounded-2xl p-4"
-          >
-            {/* <CursorArrowRaysIcon strokeWidth={1} className="h-10 w-10" />
-            <Typography className="mt-5 text-center" variant="h5">
-              Material Tailwind PRO
-            </Typography> */}
-          </Card>
-          <ul className="col-span-4 flex w-full flex-col gap-1">
-            {menuItems.map(({ title, description }) => (
-              <a href="#" key={title}>
-                <MenuItem className="border-b border-t ">
-                  <Typography variant="h6" color="blue-gray" className="mb-1">
-                    {title}
-                  </Typography>
-                </MenuItem>
-              </a>
-            ))}
+        <MenuList className="lg:grid text-left text-sm md:text-base font-normal text-blue-gray-900">
+          <ul className="flex w-full flex-col gap-1">
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>About us</p>
+              </MenuItem>
+            </a>
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>Management</p>
+              </MenuItem>
+            </a>
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>Administration</p>
+              </MenuItem>
+            </a>
           </ul>
         </MenuList>
       </Menu>
@@ -107,33 +117,16 @@ const ProfileMenu = () => {
 };
 
 const AcademicMenu = () => {
-  const menuItems = [
-    {
-      title: "@material-tailwind/html",
-      description:
-        "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
-    },
-    {
-      title: "@material-tailwind/react",
-      description:
-        "Learn how to use @material-tailwind/react, packed with rich components for React.",
-    },
-    {
-      title: "Material Tailwind PRO",
-      description:
-        "A complete set of UI Elements for building faster websites in less time.",
-    },
-  ];
   const [openMenu, setOpenMenu] = React.useState(false);
   return (
-    <div>
+    <div className="py-1">
       <Menu open={openMenu} handler={setOpenMenu} allowHover>
         <MenuHandler>
           <Button
             variant="text"
-            className="flex items-center gap-3 text-base font-normal capitalize tracking-normal"
+            className="flex items-center gap-1 md:gap-3 text-sm md:text-base font-normal capitalize tracking-normal"
           >
-            ACADEMIN{" "}
+            ACADEMICS{" "}
             <ChevronDownIcon
               strokeWidth={2.5}
               className={`h-3.5 w-3.5 transition-transform ${
@@ -142,27 +135,72 @@ const AcademicMenu = () => {
             />
           </Button>
         </MenuHandler>
-        <MenuList className="hidden w-[36rem] grid-cols-7 gap-3 overflow-visible lg:grid">
-          <Card
-            color="gray"
-            shadow={false}
-            className="col-span-3 flex h-full w-full items-center justify-center rounded-2xl p-4"
-          >
-            <HiAcademicCap className="h-10 w-10 text-white" />
-            <Typography className="mt-5 text-center" variant="h5">
-              ACADEMICS
-            </Typography>
-          </Card>
-          <ul className="col-span-4 flex w-full flex-col gap-1">
-            {menuItems.map(({ title, description }) => (
-              <a href="#" key={title}>
-                <MenuItem className="border-b border-t ">
-                  <Typography variant="h6" color="blue-gray" className="mb-1">
-                    {title}
-                  </Typography>
+        <MenuList className="lg:grid text-left text-sm md:text-base font-normal text-blue-gray-900">
+          <ul className="flex w-full flex-col gap-1">
+            <Menu placement="right-start" className="w-full bg-white">
+              <MenuHandler>
+                <MenuItem className="border-b">
+                  <p>PROGRAMS </p>
                 </MenuItem>
-              </a>
-            ))}
+              </MenuHandler>
+              <MenuList>
+                <MenuItem>UG</MenuItem>
+                <MenuItem>PG</MenuItem>
+              </MenuList>
+            </Menu>
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>ACADEMIC CALENDAR </p>
+              </MenuItem>
+            </a>
+          </ul>
+        </MenuList>
+      </Menu>
+    </div>
+  );
+};
+
+const ActivitiesMenu = () => {
+  const [openMenu, setOpenMenu] = React.useState(false);
+  return (
+    <div className="py-1">
+      <Menu open={openMenu} handler={setOpenMenu} allowHover>
+        <MenuHandler>
+          <Button
+            variant="text"
+            className="flex items-center gap-1 md:gap-3 text-sm md:text-base font-normal capitalize tracking-normal"
+          >
+            ACTIVITIES{" "}
+            <ChevronDownIcon
+              strokeWidth={2.5}
+              className={`h-3.5 w-3.5 transition-transform ${
+                openMenu ? "rotate-180" : ""
+              }`}
+            />
+          </Button>
+        </MenuHandler>
+        <MenuList className="lg:grid text-left text-sm md:text-base font-normal text-blue-gray-900">
+          <ul className="flex w-full flex-col gap-1">
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>IEDC </p>
+              </MenuItem>
+            </a>
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>MU LEARN</p>
+              </MenuItem>
+            </a>
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>STANDARD CLUB</p>
+              </MenuItem>
+            </a>
+            <a href="#">
+              <MenuItem className="border-b">
+                <p>NSS </p>
+              </MenuItem>
+            </a>
           </ul>
         </MenuList>
       </Menu>
