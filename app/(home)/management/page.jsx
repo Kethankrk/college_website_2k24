@@ -3,7 +3,7 @@ import React from "react";
 
 function ManagementPage() {
   return (
-    <div className="bg-[#f7f7f7] min-h-[400px]">
+    <div className="min-h-[400px]">
       <div className="mx-auto max-w-6xl px-5 py-10">
         <h1 className="font-medium text-3xl mb-5 text-gray-800 text-center">
           Management

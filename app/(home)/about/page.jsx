@@ -2,7 +2,7 @@ import React from "react";
 
 function AboutPage() {
   return (
-    <div className="bg-[#f7f7f7] pt-10 pb-20 px-5">
+    <div className="pt-10 pb-20 px-5">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl text-center mb-5 text-gray-800">About us</h2>
         <p className="text-sm text-gray-700 mb-10">
