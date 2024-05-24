@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Topsection />
         <Navbar />
-        {children}
+        <div className="min-h-[400px]">{children}</div>
         <FooterSection />
       </body>
     </html>

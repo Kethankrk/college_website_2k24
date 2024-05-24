@@ -16,9 +16,9 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex w-full justify-center py-4">
-      <div className="flex flex-col md:flex-row  max-w-7xl md:justify-between w-full md:items-end  items-center">
-        <div className="flex gap-2 w-full ">
+    <div className="flex w-full justify-center py-3 px-2">
+      <div className="flex flex-col md:flex-row  max-w-7xl md:justify-between w-full md:items-center">
+        <div className="flex gap-4 w-full ">
           <img src="/IHRD_Logo.svg" alt="asd" className="w-20" />
           <Typography variant="h4" color="red">
             COLLEGE OF APPLIED SCIENCE <br />
@@ -27,11 +27,13 @@ const Navbar = () => {
         </div>
         <div className=" md:justify-end justify-center  flex w-full px-8 gap-3">
           <Link href="/">
-            <Typography className="py-3">HOME</Typography>
+            <Typography className="py-3 font-normal">HOME</Typography>
           </Link>
           <ProfileMenu />
           <AcademicMenu />
-          <Typography className="py-3">CONTACT</Typography>
+          <Link href="/#contact">
+            <Typography className="py-3 font-normal">CONTACT</Typography>
+          </Link>
         </div>
       </div>
     </div>
