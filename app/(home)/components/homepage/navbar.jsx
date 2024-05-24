@@ -146,12 +146,12 @@ const AcademicMenu = () => {
                 </MenuItem>
               </MenuHandler>
               <MenuList>
-                <MenuItem>
-                  <Link href="/ug-programmes">UG</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/pg-programmes">PG</Link>
-                </MenuItem>
+                <Link href="/ug-programmes">
+                  <MenuItem>UG</MenuItem>
+                </Link>
+                <Link href="/pg-programmes">
+                  <MenuItem>PG</MenuItem>
+                </Link>
               </MenuList>
             </Menu>
             <a href="#">

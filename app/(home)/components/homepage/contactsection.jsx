@@ -3,7 +3,7 @@ import React from "react";
 
 function ContactSection() {
   return (
-    <main className="p-10 min-h-screen" id="contact">
+    <main className="p-10" id="contact">
       <div className="max-w-5xl grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10">
         <div>
           <p className="font-semibold text-xs mb-2">connect</p>
@@ -11,7 +11,7 @@ function ContactSection() {
           <p className="text-sm">
             Have a question or need assistance? Reach out to us.
           </p>
-          <div className="mt-16 flex flex-col gap-10">
+          <div className="mt-10 flex flex-col gap-5">
             <div className="flex flex-col items-center lg:block">
               <Image src="email.svg" width={30} height={30} />
               <p className="font-semibold mb-2">Email</p>
