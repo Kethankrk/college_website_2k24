@@ -56,7 +56,12 @@ const Navbar = () => {
         <ProfileMenu />
         <AcademicMenu />
         <ActivitiesMenu />
-        <Link href="/#gallery" className="px-2 py-1">
+        <Link href="/admission" className="px-2 py-1">
+          <Typography className="py-1 font-normal text-sm md:text-base">
+            ADMISSION
+          </Typography>
+        </Link>
+        <Link href="/gallery" className="px-2 py-1">
           <Typography className="py-1 font-normal text-sm md:text-base">
             GALLERY
           </Typography>
@@ -154,11 +159,27 @@ const AcademicMenu = () => {
                 </Link>
               </MenuList>
             </Menu>
-            <a href="#">
-              <MenuItem className="border-b">
-                <p>ACADEMIC CALENDAR </p>
-              </MenuItem>
-            </a>
+            <Menu placement="right-start" className="w-full bg-white">
+              <MenuHandler>
+                <MenuItem className="border-b">
+                  <p className="flex gap-2">
+                    DEARTMENT
+                    <ChevronDownIcon className="w-4 -rotate-90" />
+                  </p>
+                </MenuItem>
+              </MenuHandler>
+              <MenuList>
+                <Link href="/department/cs">
+                  <MenuItem>COMPUTER DEPARTMENT</MenuItem>
+                </Link>
+                <Link href="/department/english">
+                  <MenuItem>ENGLISH DEPARTMENT</MenuItem>
+                </Link>
+                <Link href="/department/commerce">
+                  <MenuItem>COMMERCE DEPARTMENT</MenuItem>
+                </Link>
+              </MenuList>
+            </Menu>
           </ul>
         </MenuList>
       </Menu>
