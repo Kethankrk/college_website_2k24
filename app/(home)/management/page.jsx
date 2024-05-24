@@ -15,8 +15,8 @@ function ManagementPage() {
           is an autonomous educational institution established by the Government
           of Kerala in 1987. The institute is registered under The Travancore
           Cochin Literary, Scientific and Charitable societies registrations Act
-          12 of 1955. The Institute's Memorandum of Association and its rules
-          and regulations have been judiciously framed with built-in growth
+          12 of 1955. The Institutes Memorandum of Association and its rules and
+          regulations have been judiciously framed with built-in growth
           provisions. The management of the institute is vested with a Governing
           Body composed of with the Honble Minister of Higher Education,
           Government of Kerala, as the Chairman and Chief Secretary to
