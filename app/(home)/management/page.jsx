@@ -13,12 +13,12 @@ function ManagementPage() {
             Institute of Human Resources Development (IHRD)
           </span>{" "}
           is an autonomous educational institution established by the Government
-          of Kerala in 1987. The institute is registered under The Travancore –
+          of Kerala in 1987. The institute is registered under The Travancore
           Cochin Literary, Scientific and Charitable societies registrations Act
           12 of 1955. The Institute's Memorandum of Association and its rules
           and regulations have been judiciously framed with built-in growth
           provisions. The management of the institute is vested with a Governing
-          Body composed of with the Hon’ble Minister of Higher Education,
+          Body composed of with the Honble Minister of Higher Education,
           Government of Kerala, as the Chairman and Chief Secretary to
           Government of Kerala as the Vice-Chairman. Institute of Human
           Resources Development is dedicated to the scientific advancement,
