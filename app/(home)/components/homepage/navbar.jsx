@@ -94,21 +94,21 @@ const ProfileMenu = () => {
         </MenuHandler>
         <MenuList className="lg:grid text-left text-sm md:text-base font-normal text-blue-gray-900">
           <ul className="flex w-full flex-col gap-1">
-            <a href="#">
+            <Link href="/about">
               <MenuItem className="border-b">
                 <p>About us</p>
               </MenuItem>
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="/management">
               <MenuItem className="border-b">
                 <p>Management</p>
               </MenuItem>
-            </a>
-            <a href="#">
+            </Link>
+            <Link href="/administration">
               <MenuItem className="border-b">
                 <p>Administration</p>
               </MenuItem>
-            </a>
+            </Link>
           </ul>
         </MenuList>
       </Menu>
@@ -146,8 +146,12 @@ const AcademicMenu = () => {
                 </MenuItem>
               </MenuHandler>
               <MenuList>
-                <MenuItem>UG</MenuItem>
-                <MenuItem>PG</MenuItem>
+                <MenuItem>
+                  <Link href="/ug-programmes">UG</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href="/pg-programmes">PG</Link>
+                </MenuItem>
               </MenuList>
             </Menu>
             <a href="#">
