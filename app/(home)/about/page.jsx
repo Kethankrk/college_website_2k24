@@ -2,10 +2,10 @@ import React from "react";
 
 function AboutPage() {
   return (
-    <div className="bg-gray-50 pt-10 pb-20">
+    <div className="pt-10 pb-20 px-5">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl text-center mb-10 text-gray-800">About us</h2>
-        <p className="text-sm text-gray-700 mb-20">
+        <h2 className="text-4xl text-center mb-5 text-gray-800">About us</h2>
+        <p className="text-sm text-gray-700 mb-10">
           College of Applied Science, Thamarassery, is affiliated to the Calicut
           University and was established in 2012 with regular courses in B.Sc
           (Computer Science), B.Com with CA, BA English, BCA, BBA, MA English

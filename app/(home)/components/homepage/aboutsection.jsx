@@ -2,12 +2,12 @@ import React from "react";
 
 function Aboutsection() {
   return (
-    <div className="bg-blue-gray-50 px-5">
+    <div className="bg-[#0F4077] px-5 text-white">
       <div className="max-w-6xl mx-auto py-10">
         <h3 className="font-medium text-2xl mb-5">
           College of Applied Science Thamarassery
         </h3>
-        <p className="text-gray-900 font-light">
+        <p className="text-white font-light text-sm lg:text-base">
           Our institution offers a comprehensive education in arts and sciences,
           preparing students for successful careers with experienced faculty, we
           provide a nurturing environment for academic excellence. Our diverse
