@@ -46,7 +46,7 @@ const Navbar = () => {
       <div
         className={`${
           mobileMenuOpen ? "flex" : "hidden"
-        } flex-col md:flex md:flex-row items-center md:space-x-4 w-full md:w-auto transition-all duration-300 ease-in-out`}
+        } flex-col items-start md:flex md:flex-row md:items-center md:space-x-4 w-full md:w-auto transition-all duration-300 ease-in-out`}
       >
         <Link href="/" className="px-2 py-1">
           <Typography className="py-1 font-normal text-sm md:text-base">
@@ -140,7 +140,9 @@ const AcademicMenu = () => {
             <Menu placement="right-start" className="w-full bg-white">
               <MenuHandler>
                 <MenuItem className="border-b">
-                  <p>PROGRAMS </p>
+                  <p className="flex gap-2">
+                    PROGRAMS <ChevronDownIcon className="w-4 -rotate-90" />
+                  </p>
                 </MenuItem>
               </MenuHandler>
               <MenuList>
