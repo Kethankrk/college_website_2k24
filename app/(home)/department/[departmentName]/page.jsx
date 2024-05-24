@@ -1,10 +1,10 @@
 import React from "react";
 
-function TeachersList() {
+export function TeachersList() {
   return (
     <div className="w-full grid grid-cols-2 text-gray-800 font-semibold mb-3">
       <p className="">Dinesh Kumar CP</p>
-      <p>HOD</p>
+      <p className="text-center">HOD</p>
     </div>
   );
 }
@@ -12,7 +12,7 @@ function SingleDepartmentPage({ params }) {
   let dep = params.departmentName;
   if (dep == "cs") dep = "computer science";
   return (
-    <main className="bg-[#f7f7f7]">
+    <main className="bg-[#f7f7f7] px-5">
       <div className="max-w-6xl mx-auto pt-10 pb-20">
         <h2 className="text-4xl text-center mb-10 text-gray-800">
           Department of {dep}
