@@ -1,7 +1,18 @@
 import React from "react";
-import { TeachersList } from "../department/[departmentName]/page";
+import prisma from "@/prisma/db";
+import { TeachersList } from "../department/components/teacherListCard";
 
-function AdministrationPage() {
+const getData = async () => {
+  const staff = await prisma.staff.findMany({
+    where: {
+      department: "office",
+    },
+  });
+  return staff;
+};
+
+async function AdministrationPage() {
+  const staff = await getData();
   return (
     <div className="min-h-[400px]">
       <div className="px-5 py-10 flex justify-center flex-col items-center text-gray-900">
@@ -10,11 +21,9 @@ function AdministrationPage() {
         </h1>
         <p className="mb-5">Office staff</p>
         <div className="max-w-[400px] w-full">
-          <TeachersList />
-          <TeachersList />
-          <TeachersList />
-          <TeachersList />
-          <TeachersList />
+          {staff.map((item) => (
+            <TeachersList name={item.name} post={item.post} key={item.id} />
+          ))}
         </div>
       </div>
     </div>

@@ -1,21 +1,23 @@
+import prisma from "@/prisma/db";
 import React from "react";
+import { TeachersList } from "../components/teacherListCard";
 
-export function TeachersList() {
-  return (
-    <div className="w-full grid grid-cols-2 text-gray-800 font-semibold mb-3">
-      <p className="">Dinesh Kumar CP</p>
-      <p className="text-center">HOD</p>
-    </div>
-  );
+async function getData() {
+  const staff = await prisma.staff.findMany({
+    where: {
+      department: "english",
+    },
+  });
+  return staff;
 }
-function SingleDepartmentPage({ params }) {
-  let dep = params.departmentName;
-  if (dep == "cs") dep = "computer science";
+
+async function SingleDepartmentPage() {
+  const staff = await getData();
   return (
     <main className="bg-[#f7f7f7] px-5">
       <div className="max-w-6xl mx-auto pt-10 pb-20">
         <h2 className="text-4xl text-center mb-10 text-gray-800">
-          Department of {dep}
+          Department of English
         </h2>
         <p className="text-sm text-gray-700 mb-20">
           The Department of Computer Science, functioning from very beginning of
@@ -33,10 +35,9 @@ function SingleDepartmentPage({ params }) {
         <p className="font-medium text-2xl mb-8 text-gray-800">Faculty</p>
         <div className="">
           <div className="max-w-[400px] w-full">
-            <TeachersList />
-            <TeachersList />
-            <TeachersList />
-            <TeachersList />
+            {staff.map((item) => (
+              <TeachersList name={item.name} post={item.post} key={item.id} />
+            ))}
           </div>
         </div>
       </div>
