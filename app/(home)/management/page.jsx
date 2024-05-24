@@ -23,8 +23,8 @@ function ManagementPage() {
           Government of Kerala as the Vice-Chairman. Institute of Human
           Resources Development is dedicated to the scientific advancement,
           technological progress and economic growth of the country through
-          human resources development. Based on the principle, "Think Globally
-          and Act Locally" it endeavours to bring about the welfare of the
+          human resources development. Based on the principle, Think Globally
+          and Act Locally it endeavours to bring about the welfare of the
           nation. It endeavours to provide education and training of
           consistently high stands through innovative and versatile programmes
           suitable for the current and emerging needs of the community.
