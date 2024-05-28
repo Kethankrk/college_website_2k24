@@ -26,6 +26,12 @@ function AdmissionPage() {
             CAP Admission Portal for Colleges under Calicut University
           </p>
         </a>
+        <a href="https://ihrd.ac.in/images/stories/admin24/UGProspectus2024-25Calicut.pdf">
+          <p className="text-blue-900 mb-4 hover:underline font-medium">
+            IHRD admission to the seats under the Calicut University Four Year
+            Under Graduate Programmes (CUFYUGP) during 2024-2025
+          </p>
+        </a>
       </div>
     </div>
   );

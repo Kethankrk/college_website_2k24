@@ -49,27 +49,21 @@ const Navbar = () => {
         } flex-col items-start md:flex md:flex-row md:items-center md:space-x-4 w-full md:w-auto transition-all duration-300 ease-in-out`}
       >
         <Link href="/" className="px-2 py-1">
-          <Typography className="py-1 font-normal text-sm md:text-base">
-            HOME
-          </Typography>
+          <Typography className="py-1 font-normal text-sm">HOME</Typography>
         </Link>
         <ProfileMenu />
         <AcademicMenu />
         <ActivitiesMenu />
         <Link href="/admission" className="px-2 py-1">
-          <Typography className="py-1 font-normal text-sm md:text-base">
+          <Typography className="py-1 font-normal text-sm">
             ADMISSION
           </Typography>
         </Link>
         <Link href="/gallery" className="px-2 py-1">
-          <Typography className="py-1 font-normal text-sm md:text-base">
-            GALLERY
-          </Typography>
+          <Typography className="py-1 font-normal text-sm">GALLERY</Typography>
         </Link>
         <Link href="/#contact" className="px-2 py-1">
-          <Typography className="py-1 font-normal text-sm md:text-base">
-            CONTACT
-          </Typography>
+          <Typography className="py-1 font-normal text-sm">CONTACT</Typography>
         </Link>
       </div>
     </div>
@@ -86,9 +80,9 @@ const ProfileMenu = () => {
         <MenuHandler>
           <Button
             variant="text"
-            className="flex items-center gap-1 md:gap-3 text-sm md:text-base font-normal capitalize tracking-normal"
+            className="flex items-center gap-1 md:gap-3 text-sm font-normal capitalize tracking-normal"
           >
-            PROFILE{" "}
+            PROFILE
             <ChevronDownIcon
               strokeWidth={2.5}
               className={`h-3.5 w-3.5 transition-transform ${
@@ -129,9 +123,9 @@ const AcademicMenu = () => {
         <MenuHandler>
           <Button
             variant="text"
-            className="flex items-center gap-1 md:gap-3 text-sm md:text-base font-normal capitalize tracking-normal"
+            className="flex items-center gap-1 md:gap-3 text-sm font-normal capitalize tracking-normal"
           >
-            ACADEMICS{" "}
+            ACADEMICS
             <ChevronDownIcon
               strokeWidth={2.5}
               className={`h-3.5 w-3.5 transition-transform ${
@@ -195,9 +189,9 @@ const ActivitiesMenu = () => {
         <MenuHandler>
           <Button
             variant="text"
-            className="flex items-center gap-1 md:gap-3 text-sm md:text-base font-normal capitalize tracking-normal"
+            className="flex items-center gap-1 md:gap-3 text-sm font-normal capitalize tracking-normal"
           >
-            ACTIVITIES{" "}
+            ACTIVITIES
             <ChevronDownIcon
               strokeWidth={2.5}
               className={`h-3.5 w-3.5 transition-transform ${

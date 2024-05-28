@@ -25,8 +25,8 @@ export default function FooterSection() {
           </div>
           <div>
             <ul>Contact</ul>
-            <li>8281502083</li>
-            <li>459-09234920</li>
+            <li>0495-2963244</li>
+            <li>+91 8547005025</li>
           </div>
         </div>
       </div>

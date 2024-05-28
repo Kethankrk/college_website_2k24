@@ -48,41 +48,41 @@ function UgProgrammesPage() {
             course="B.Sc COMPUTER SCIENCE (Honours)"
             year="4"
             sem="8"
-            totalSeats="36"
-            universitySeats="16"
-            ihrdSeats="16"
+            totalSeats="34"
+            universitySeats="17"
+            ihrdSeats="17"
           />
           <CourseTable
             course="BACHELOR OF COMPUTER APPLICATION (Honours)"
             year="4"
             sem="8"
             totalSeats="36"
-            universitySeats="16"
-            ihrdSeats="16"
+            universitySeats="18"
+            ihrdSeats="18"
           />
           <CourseTable
             course="B.COM WITH COMPUTER APPLICATION (Honours)"
             year="4"
             sem="8"
-            totalSeats="36"
-            universitySeats="16"
-            ihrdSeats="16"
+            totalSeats="60"
+            universitySeats="30"
+            ihrdSeats="30"
           />
           <CourseTable
             course="BBA (Honours)"
             year="4"
             sem="8"
-            totalSeats="36"
-            universitySeats="16"
-            ihrdSeats="16"
+            totalSeats="50"
+            universitySeats="25"
+            ihrdSeats="25"
           />
           <CourseTable
             course="BA ENGLISH LANGUAGE AND LITERATURE (Honours)"
             year="4"
             sem="8"
-            totalSeats="36"
-            universitySeats="16"
-            ihrdSeats="16"
+            totalSeats="40"
+            universitySeats="20"
+            ihrdSeats="20"
           />
         </div>
         <h3 className="text-xl font-medium mb-3">ELIGIBILITY FOR ADMISSION</h3>

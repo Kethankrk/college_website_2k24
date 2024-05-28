@@ -14,11 +14,11 @@ const Topsection = () => {
       <div className="flex gap-4 md:gap-6 items-center flex-wrap">
         <p className="flex gap-1 items-center text-xs sm:text-sm md:text-base">
           <MdOutlinePhoneAndroid className="w-4 h-4 sm:w-5 sm:h-5" />
-          0495 123 123 123
+          0495-2963244
         </p>
         <p className="flex gap-1 items-center text-xs sm:text-sm md:text-base">
           <IoIosMail className="w-5 h-5 sm:w-6 sm:h-6" />
-          casthamarassery@email.com
+          casthamarassery@gmail.com
         </p>
       </div>
       <div className="flex gap-2 mt-2 sm:mt-0">

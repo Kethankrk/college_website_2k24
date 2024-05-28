@@ -16,13 +16,14 @@ function ContactSection() {
               <Image src="email.svg" width={30} height={30} />
               <p className="font-semibold mb-2">Email</p>
               <p className="text-sm">Send us an email</p>
-              <p className="text-sm">castmsy@gmail.com</p>
+              <p className="text-sm">casthamarassery@gmail.com</p>
             </div>
             <div className="flex flex-col items-center lg:block">
               <Image src="phone.svg" width={30} height={30} />
               <p className="font-semibold mb-2">Phone</p>
-              <p className="text-sm">Give use a call</p>
-              <p className="text-sm">+91 987654321</p>
+              <p className="text-sm mb-1">Give use a call</p>
+              <p className="text-sm">0495-2963244</p>
+              <p className="text-sm">+91 8547005025</p>
             </div>
             <div className="flex flex-col items-center lg:block">
               <Image src="location.svg" width={30} height={30} />

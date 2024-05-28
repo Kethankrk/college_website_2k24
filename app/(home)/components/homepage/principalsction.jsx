@@ -12,9 +12,9 @@ function Principalsection() {
             <br />
             The Principal, <br />
             College of Applied Science Thamarassery <br />
-            Ph: 0495 2765154,
+            Ph: +91 8547005025,
             <br />
-            E-mail: caskozhikode@ihrd.ac.in
+            E-mail: casthmarassery@ihrd.ac.in
           </p>
           <p className="max-w-[600px] text-start">
             College of Applied Science, Thamarassery is managed by IHRD, a
