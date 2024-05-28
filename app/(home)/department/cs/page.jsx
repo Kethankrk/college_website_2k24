@@ -2,6 +2,7 @@ import prisma from "@/prisma/db";
 import React from "react";
 import { TeachersList } from "../components/teacherListCard";
 
+export const revalidate = 120;
 export const getData = async () => {
   const staff = await prisma.staff.findMany({
     where: {
