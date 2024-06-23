@@ -4,7 +4,7 @@ import React from "react";
 function ContactSection() {
   return (
     <main className="p-10" id="contact">
-      <div className="max-w-5xl grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10">
+      <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-2 mx-auto gap-10">
         <div>
           <p className="font-semibold text-xs mb-2">connect</p>
           <h3 className="text-2xl font-semibold mb-3">Contact Information</h3>
