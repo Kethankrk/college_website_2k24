@@ -3,7 +3,7 @@ import Image from "next/image";
 function FacilitySection() {
   return (
     <div className="w-full bg-[#C0DFE7] p-10">
-      <div className="mx-auto max-w-[1000px]">
+      <div className="mx-auto max-w-6xl">
         <h3 className="text-xl font-semibold mb-4">Our Facility</h3>
         <div className="flex justify-between flex-wrap gap-10">
           <div className="flex items-center gap-2">
