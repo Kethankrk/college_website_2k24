@@ -32,12 +32,13 @@ const Herosection = () => {
           alt="image 1"
           className="w-full object-center object-cover max-h-[450px]"
         />
-        <img
+        {/* <img
           src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80"
           alt="image 3"
           className="w-full object-center object-cover max-h-[450px]"
-        />
+        /> */}
       </Carousel>
+      <p></p>
     </div>
   );
 };
