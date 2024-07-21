@@ -20,7 +20,7 @@ function QuestionCard({ question, answer }) {
       {words.length > 50 && (
         <button
           onClick={toggleShowMore}
-          className="hover:underline mt-2 text-sm font-medium"
+          className="hover:underline mt-2 text-sm font-medium text-blue-700"
         >
           {showMore ? "Show Less" : "Show More"}
         </button>
