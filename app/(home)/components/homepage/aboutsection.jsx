@@ -13,7 +13,8 @@ function Aboutsection() {
           provide a nurturing environment for academic excellence. Our diverse
           curriculum and extracurricular activities promote holistic learning
           and personal growth. Join us on a journey of knowledge, discovery, and
-          empowerment at the College of Applied Science, Thamarassery. With a
+          empowerment at the College of Applied Science, Thamarassery.
+          <span className="hidden lg:inline"> With a
           rich history of academic excellence, the College of Applied Science,
           Thamarassery has a strong reputation for delivering high-quality
           education. Our esteemed faculty members, who are experts in their
@@ -22,7 +23,7 @@ function Aboutsection() {
           students have access to modern facilities, including well-equipped
           classrooms, laboratories, and a well-stocked library. These resources
           support and enhance the learning experience, enabling students to
-          engage in hands-on experiments, and collaborative activities.
+          engage in hands-on experiments, and collaborative activities.</span>
         </p>
       </div>
     </div>
