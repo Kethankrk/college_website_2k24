@@ -32,4 +32,7 @@ export async function POST(req) {
   }
 
 
-  
+export async function GET(req){
+    const categories = await prisma.category.findMany({})
+    return NextResponse.json(categories)
+}
