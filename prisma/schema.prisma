@@ -21,3 +21,8 @@ model Staff {
   post String
 }
 
+model gallery {
+  id String @id @default(uuid()) @map("_id") 
+  url String
+  category String
+}
