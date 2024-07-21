@@ -17,3 +17,14 @@ export async function POST(req) {
     return NextResponse.json({"Error": "Unknown error"})
   }
 }
+
+export async function GET(req){
+  const categories = await prisma.category.findMany({
+    select: {
+      id: true,
+      title:  true
+    },
+  })
+
+  return NextResponse.json(categories)
+}
