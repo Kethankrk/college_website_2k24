@@ -3,6 +3,8 @@ import "../globals.css";
 import Topsection from "./components/homepage/topsection";
 import Navbar from "./components/homepage/navbar";
 import FooterSection from "./components/homepage/footersection";
+import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.min.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
