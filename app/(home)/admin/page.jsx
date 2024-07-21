@@ -1,13 +1,35 @@
 "use client";
+
 import prisma from "@/prisma/db";
 import { Button } from "@material-tailwind/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 const Page = () => {
   const [images, setImages] = useState([]);
   const [category, setCategory] = useState("");
   const [loading, setloading] = useState(false);
+  const [categories, setcategories] = useState([]);
+  useEffect(() => {
+    const fetchcategory = async () => {
+      const res = await fetch("/api/category");
+      const cate = await res.json();
+      setcategories(cate);
+    };
+    fetchcategory();
+  }, []);
+  const OnError = () => {
+    toast.error("Image upload failed", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      // pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
   const handleUpload = async (e) => {
     e.preventDefault();
@@ -28,20 +50,12 @@ const Page = () => {
 
         if (res.ok) {
           console.log("Image uploaded successfully to imgbb");
-          imgurls.push(res.url);
+
+          const imageurl = await res.json();
+          imgurls.push(imageurl.data.url);
         } else {
           console.error("Image upload failed");
-          toast.error("Image upload failed", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          });
+          OnError();
           setloading(false);
           setImages([]);
         }
@@ -52,10 +66,10 @@ const Page = () => {
     try {
       const serverRes = await fetch("/api/images", {
         method: "POST",
-        body: {
-          category: 12,
+        body: JSON.stringify({
+          id: category,
           images: imgurls,
-        },
+        }),
       });
       if (serverRes.ok) {
         console.log("Image uploaded successfully to server");
@@ -66,25 +80,14 @@ const Page = () => {
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
-          pauseOnHover: true,
+          // pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "light",
-          transition: Bounce,
         });
       } else {
         console.error("Image upload failed");
-        toast.error("Image upload failed", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Bounce,
-        });
+        OnError();
         setloading(false);
         setImages([]);
       }
@@ -109,45 +112,55 @@ const Page = () => {
         pauseOnHover
         theme="light"
       />
-      <ToastContainer />
       <h1 className="text-2xl">Admin page</h1>
 
-      <form
-        onSubmit={handleUpload}
-        className="flex flex-col items-start gap-2 mt-4"
-      >
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => setImages([...e.target.files])}
-          multiple
-          required
-        />
-        <div className="flex items-center gap-2">
-          <h1>Category</h1>
-          <select
-            required
-            name="category"
-            id="category"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="ml-2"
-          >
-            <option value="">Select a category</option>
-            <option value="category1">Category 1</option>
-            <option value="category2">Category 2</option>
-          </select>
-        </div>
-        <Button
-          type="submit"
-          variant="gradient"
-          loading={loading}
-          color="blue"
-          size="lg"
+      {categories ? (
+        <form
+          onSubmit={handleUpload}
+          className="flex flex-col items-start gap-2 mt-4"
         >
-          Submit
-        </Button>
-      </form>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => setImages([...e.target.files])}
+            multiple
+            required
+          />
+          <div className="flex items-center gap-2">
+            <h1>Category</h1>
+            <select
+              required
+              name="category"
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="ml-2"
+            >
+              <option value="">Select category</option>
+              {categories
+                ? categories.map((i) => (
+                    <option value={i.id} key={i.id}>
+                      {i.title}
+                    </option>
+                  ))
+                : ""}
+              {/*
+            <option value="category2">Category 2</option> */}
+            </select>
+          </div>
+          <Button
+            type="submit"
+            variant="gradient"
+            loading={loading}
+            color="blue"
+            size="lg"
+          >
+            Submit
+          </Button>
+        </form>
+      ) : (
+        <p>Loading ......</p>
+      )}
     </div>
   );
 };
