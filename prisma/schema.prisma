@@ -15,14 +15,14 @@ datasource db {
 
 
 model Staff {
-  id String @id @default(uuid()) @map("_id") @db.ObjectId
+  id String @id @default(uuid()) @map("_id")
   name String
   department String
   post String
 }
 
-model gallery {
-  id String @id @default(uuid()) @map("_id") 
-  url String
-  category String
+model Category {
+  id String @id @default(uuid()) @map("_id")
+  title String
+  images String[]
 }
