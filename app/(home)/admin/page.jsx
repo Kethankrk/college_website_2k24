@@ -2,46 +2,114 @@
 import prisma from "@/prisma/db";
 import { Button } from "@material-tailwind/react";
 import React, { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Page = () => {
   const [images, setImages] = useState([]);
   const [category, setCategory] = useState("");
+  const [loading, setloading] = useState(false);
 
   const handleUpload = async (e) => {
     e.preventDefault();
+    setloading(true);
 
-    images.forEach(async (image) => {
-      const formData = new FormData();
-      formData.append("image", image);
-      const res = await fetch(
-        "https://api.imgbb.com/1/upload?key=3d8bf11ce249ae916c6a0f8c59052db8",
-        {
-          method: "POST",
-          body: formData,
+    const imgurls = [];
+    try {
+      for (const image of images) {
+        const formData = new FormData();
+        formData.append("image", image);
+        const res = await fetch(
+          "https://api.imgbb.com/1/upload?key=3d8bf11ce249ae916c6a0f8c59052db8",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        if (res.ok) {
+          console.log("Image uploaded successfully to imgbb");
+          imgurls.push(res.url);
+        } else {
+          console.error("Image upload failed");
+          toast.error("Image upload failed", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+          setloading(false);
+          setImages([]);
         }
-      );
-
-      if (res.ok) {
-        console.log("Image uploaded successfully in imgbb");
-        // const res2 = await prisma.gallery.create({
-        //   data: {
-        //     image: res.url,
-        //     category: category,
-        //   },
-        // });
-        const res2 = await prisma.gallery.append();
-        console.log(res2);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    try {
+      const serverRes = await fetch("/api/images", {
+        method: "POST",
+        body: {
+          category: 12,
+          images: imgurls,
+        },
+      });
+      if (serverRes.ok) {
+        console.log("Image uploaded successfully to server");
+        setloading(false);
+        setImages([]);
+        toast.success("Image uploaded successfully.", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       } else {
         console.error("Image upload failed");
+        toast.error("Image upload failed", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+        setloading(false);
+        setImages([]);
       }
-    });
-
+    } catch (error) {
+      console.log(error);
+    }
     // console.log(image);
     // console.log(category);
   };
 
   return (
     <div className="px-10 py-7">
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer />
       <h1 className="text-2xl">Admin page</h1>
 
       <form
@@ -70,7 +138,15 @@ const Page = () => {
             <option value="category2">Category 2</option>
           </select>
         </div>
-        <Button type="submit">Submit</Button>
+        <Button
+          type="submit"
+          variant="gradient"
+          loading={loading}
+          color="blue"
+          size="lg"
+        >
+          Submit
+        </Button>
       </form>
     </div>
   );
